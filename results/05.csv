@@ -1,0 +1,7 @@
+order_status,order_count,order_value
+Approved,4114,40840554.03
+Cancelled,4162,41886902.51
+Delivered,4113,40254796.60
+Processing,4283,42612082.52
+Refunded,4181,42749707.85
+Shipped,4147,41628232.95

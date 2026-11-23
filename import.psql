@@ -1,0 +1,13 @@
+-- Запускать psql из каталога с исходными CSV. Нужна новая учебная база.
+\set ON_ERROR_STOP on
+\ir sql/01_import_tables.sql
+BEGIN;
+\copy hw01_raw.customers FROM 'customers.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
+\copy hw01_raw.products FROM 'products.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
+\copy hw01_raw.orders FROM 'orders.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
+\copy hw01_raw.order_items FROM 'order_items.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
+COMMIT;
+\ir sql/02_check_source.sql
+\ir sql/03_schema_and_load.sql
+\ir sql/04_check_final.sql
+\ir sql/05_analysis.sql
